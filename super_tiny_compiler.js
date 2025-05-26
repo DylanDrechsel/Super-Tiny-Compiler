@@ -97,28 +97,28 @@
 //
 // --------------------> Visitors (Part of Transformation) <-------------------- \\
 // The basic idea here is that we are going to create a 'visitor' object that has methods that will accept different node types.
+// 
+// var visitor = {
+//   NumberLiteral() {},
+//   CallExpression() {},
+// };
 //
+// When we traverse our AST, we will call the methods on this visitor whenever we 'enter' a node of matching type.
+// In order to make this useful we will also pass the node and a reference to the parent node.
 //
+// var visitor = {
+//   NumberLiteral(node, parent) {},
+//   CallExpression(node, parent) {},
+// };
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+// However, there also exists the possibility of calling things on 'exit' Imagine our tree structure from before in list form:
+// 
+// - Program
+//   - CallExpression
+//     - NumberLiteral
+//     - CallExpression
+//       - NumberLiteral
+//       - NumnberLiteral
 //
 //
 //
